@@ -21,16 +21,10 @@ const Example = function(){
 	//Example: element.appendChild(child);
 	document.appendChild(element);
 	
-	//obtain xml content fro write into file
+	//obtain xml content to text
 	var content = document.xmlContent();
 	
-	//Use any method for write content into file.
-	//This example use fs for write content Xml into file.
-	var dirfile = '/example.xml';
-	//Write contnt into file
-	fs.writeFile(dirfile, content, err => {
-		if (err)
-			console.log('Erro: ' + err) ;
-	});  
+	//Save Xml file
+	document.saveFile('example.xml');
 	
 }

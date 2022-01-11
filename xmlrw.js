@@ -1,8 +1,12 @@
+//Module Classes for create and read Xml files using Nodejs
+//Author: Rafael Tavares
+
 const fs = require("fs");
 const path = require('path');
 
 class xmlDocument {
     constructor(){
+		
         const me = this;
         this.declaration = true;
         this.version = '1.0';
@@ -80,7 +84,15 @@ class xmlDocument {
         this.xmlNodes = function(){
             return this.root;
         }
-
+		
+		this.saveFile = function(dirFile){
+			//Write contnt into file
+			fs.writeFile(dirfile, content, err => {
+				if (err)
+					console.log('Erro: ' + err) ;
+			});  
+		}
+		
     }
 }
 
