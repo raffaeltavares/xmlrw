@@ -86,7 +86,10 @@ class xmlDocument {
         }
 		
 		this.saveFile = function(dirFile){
-			fs.writeFile(dirfile, me.xmlContent(), err => {
+			
+			me.xmlContent();
+			
+			fs.writeFile(dirfile, content, err => {
 				if (err)
 					console.log('Erro: ' + err) ;
 			});  
